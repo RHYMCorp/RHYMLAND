@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHYM Perfume - Be Confident</title>
+    <meta name="description" content="RHYM Perfume - Aroma elegan yang membawa kepercayaan diri Anda ke level berikutnya. Parfum premium tahan 8+ jam, unisex & versatile.">
+    <meta name="keywords" content="parfum indonesia, parfum premium, parfum tahan lama, RHYM perfume">
+    
+    <meta property="og:title" content="RHYM Perfume - Be Confident">
+    <meta property="og:description" content="Aroma elegan yang membawa kepercayaan diri Anda ke level berikutnya.">
+    <meta property="og:type" content="website">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            50: '#FFFBEB',
+                            100: '#FEF3C7',
+                            200: '#FDE68A',
+                            300: '#FCD34D',
+                            400: '#D4A853',
+                            500: '#B8860B',
+                            600: '#9A7B0A',
+                            700: '#7C6208',
+                            800: '#5E4A06',
+                            900: '#4A3A05'
+                        },
+                        cream: {
+                            50: '#FFFEFA',
+                            100: '#FFFDF7',
+                            200: '#FDF8EE',
+                            300: '#FAF3E5'
+                        },
+                        marble: {
+                            dark: '#0D0D0D',
+                            darker: '#080808'
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'cinzel': ['Cinzel', 'serif'],
+                        'body': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        :root {
+            --bg: #FFFEFA;
+            --fg: #1A1A1A;
+            --muted: #6B6B6B;
+            --accent: #B8860B;
+            --accent-light: #D4A853;
+            --card: #FFFFFF;
+            --border: #E8E4DC;
+            --glow-gold: 212, 168, 83;
+            --glow-white: 255, 255, 255;
+            --glow-blue: 135, 206, 250;
+            --glow-brown: 161, 102, 53;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            overflow-x: hidden;
+            background-color: var(--bg);
+            font-family: 'Cormorant Garamond', serif;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            position: relative;
+        }
+
+        @media (min-width: 768px) {
+            body { font-size: 16px; }
+        }
+
+        /* Background Effects */
+        .gold-mist-layer {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .gold-mist {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            animation: mistFloat 20s ease-in-out infinite;
+        }
+        
+        .mist-1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(184, 134, 11, 0.15) 0%, transparent 70%);
+            top: -200px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+        
+        .mist-2 {
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(212, 168, 83, 0.12) 0%, transparent 70%);
+            bottom: -300px;
+            right: -200px;
+            animation-delay: -7s;
+            animation-duration: 25s;
+        }
+        
+        @keyframes mistFloat {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            25% { transform: translate(30px, -20px) scale(1.05); opacity: 0.4; }
+            50% { transform: translate(-20px, 30px) scale(0.95); opacity: 0.35; }
+            75% { transform: translate(20px, 20px) scale(1.02); opacity: 0.4; }
+        }
+
+        .silver-particles-container {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        
+        .silver-particle {
+            position: absolute;
+            background: radial-gradient(circle, rgba(192, 192, 192, 1) 0%, rgba(192, 192, 192, 0.6) 40%, transparent 70%);
+            border-radius: 50%;
+            box-shadow: 0 0 6px rgba(192, 192, 192, 0.5);
+            animation: silverFloat linear infinite;
+        }
+        
+        @keyframes silverFloat {
+            0% { transform: translateY(100vh) translateX(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.6; }
+            100% { transform: translateY(-20vh) translateX(var(--drift)) rotate(360deg); opacity: 0; }
+        }
+
+        .skip-link { position: absolute; top: -40px; left: 0; background: #B8860B; color: white; padding: 8px 16px; z-index: 100; transition: top 0.3s; }
+        .skip-link:focus { top: 0; }
+
+        .font-display { font-family: 'Playfair Display', serif; }
+        .font-cinzel { font-family: 'Cinzel', serif; }
+
+        .rhym-logo {
+            background: linear-gradient(135deg, #B8860B 0%, #D4A853 20%, #F5E6C8 40%, #D4A853 60%, #B8860B 80%, #9A7B0A 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: logoShimmer 8s ease-in-out infinite;
+        }
+
+        @keyframes logoShimmer {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        @keyframes elegantFade {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-elegant { opacity: 0; animation: elegantFade 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards; }
+        .delay-1 { animation-delay: 0.3s; }
+        .delay-2 { animation-delay: 0.6s; }
+        .delay-3 { animation-delay: 0.9s; }
+        .delay-4 { animation-delay: 1.2s; }
+
+        .btn-premium {
+            position: relative;
+            background: linear-gradient(135deg, #B8860B 0%, #D4A853 50%, #B8860B 100%);
+            background-size: 200% 200%;
+            color: white !important;
+            text-decoration: none !important;
+            border: none;
+            overflow: visible;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.25);
+            z-index: 1;
+        }
+
+        .btn-premium:hover {
+            background-position: 100% 50%;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.35);
+        }
+
+        .btn-premium:active { transform: scale(0.98); }
+
+        .hero-image-wrapper { position: relative; overflow: hidden; background: transparent; }
+        .hero-img-breathe {
+            display: block; width: 100%; height: auto; object-fit: cover;
+            animation: breathe 6s ease-in-out infinite;
+            transition: transform 0.5s ease;
+        }
+        @keyframes breathe { 0%, 100% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.03); filter: brightness(1.05); } }
+        .hero-image-wrapper::after {
+            content: ''; position: absolute; top: 0; left: -150%; width: 60%; height: 100%;
+            background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%);
+            transform: skewX(-25deg); animation: shine-effect 8s linear infinite; z-index: 3; pointer-events: none;
+        }
+        @keyframes shine-effect { 0% { left: -150%; } 100% { left: 150%; } }
+
+        .interactive-card { position: relative; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
+        .interactive-card::before { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(212, 168, 83, 0) 0%, rgba(212, 168, 83, 0.1) 50%, rgba(212, 168, 83, 0) 100%); opacity: 0; transition: opacity 0.4s ease; }
+        .interactive-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(184, 134, 11, 0.15); }
+        .interactive-card:hover::before { opacity: 1; }
+        .interactive-card:active { transform: scale(0.98); }
+
+        .number-badge { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .interactive-card:hover .number-badge { transform: scale(1.15); background: rgba(184, 134, 11, 0.2); }
+
+        .feature-card { position: relative; cursor: pointer; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
+        .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(184, 134, 11, 0.15); }
+        .icon-container { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .feature-card:hover .icon-container { transform: scale(1.1) rotate(5deg); background: rgba(184, 134, 11, 0.15); }
+
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 1s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* ============================================
+           CAROUSEL - MODIFIED
+           ============================================ */
+        .carousel-wrapper {
+            position: relative;
+            padding: 0 10px;
+        }
+
+        .scroll-container {
+            display: flex;
+            gap: 24px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 40px 0;
+            align-items: center;
+            perspective: 1000px;
+            perspective-origin: center center;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            padding-left: calc(50% - 145px);
+            padding-right: calc(50% - 145px);
+        }
+        
+        .scroll-container::-webkit-scrollbar { display: none; }
+
+        .scroll-item {
+            flex: 0 0 290px;
+            scroll-snap-align: center;
+            will-change: transform, opacity;
+            transform-style: preserve-3d;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.4s ease;
+        }
+
+        /* 3D Transforms */
+        .scroll-item.is-left { transform: rotateY(-35deg) translateZ(-80px) scale(0.85); opacity: 0.6; }
+        .scroll-item.is-right { transform: rotateY(35deg) translateZ(-80px) scale(0.85); opacity: 0.6; }
+        .scroll-item.is-center { transform: rotateY(0deg) translateZ(0px) scale(1); opacity: 1; z-index: 10; }
+
+        /* Navigation Arrows */
+        .carousel-nav-btn {
+            position: absolute; top: 50%; transform: translateY(-50%);
+            width: 44px; height: 44px;
+            background: rgba(10, 10, 10, 0.7); backdrop-filter: blur(6px);
+            border: 1px solid rgba(212, 168, 83, 0.4); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            cursor: pointer; z-index: 20; transition: all 0.3s ease; color: #D4A853;
+        }
+        .carousel-nav-btn:hover {
+            background: rgba(212, 168, 83, 0.2); border-color: #D4A853;
+            transform: translateY(-50%) scale(1.1); box-shadow: 0 0 15px rgba(212, 168, 83, 0.3);
+        }
+        .carousel-nav-btn.left { left: 0; }
+        .carousel-nav-btn.right { right: 0; }
+        .carousel-nav-btn svg { width: 24px; height: 24px; pointer-events: none; }
+        
+        /* Testimonial Scroll Container */
+        .testimonial-scroll-container {
+            display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+            scroll-behavior: smooth; -webkit-overflow-scrolling: touch;
+            padding: 10px 4px 20px 4px; margin: 0 -16px; padding-left: 16px; padding-right: 16px;
+            align-items: stretch;
+        }
+        .testimonial-scroll-container::-webkit-scrollbar { height: 4px; }
+        .testimonial-scroll-container::-webkit-scrollbar-track { background: rgba(184, 134, 11, 0.1); border-radius: 10px; }
+        .testimonial-scroll-container::-webkit-scrollbar-thumb { background: rgba(184, 134, 11, 0.4); border-radius: 10px; }
+        .testimonial-group { flex: 0 0 85%; scroll-snap-align: center; display: flex; flex-direction: column; gap: 16px; }
+        @media (min-width: 768px) { .testimonial-group { flex: 0 0 calc(50% - 12px); } }
+
+        /* Black Marble Background */
+        .bg-collection-marble {
+            background: linear-gradient(145deg, #0A0A0A 0%, #0D0D0D 30%, #080808 70%, #0A0A0A 100%);
+            position: relative; overflow: hidden;
+        }
+        .bg-collection-marble::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.08; pointer-events: none; z-index: 0;
+        }
+        
+        .marble-veins { position: absolute; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }
+        .gold-vein { position: absolute; background: linear-gradient(90deg, transparent 0%, rgba(212, 168, 83, 0.03) 20%, rgba(212, 168, 83, 0.08) 50%, rgba(212, 168, 83, 0.03) 80%, transparent 100%); height: 1px; opacity: 0.6; }
+        .vein-1 { width: 100%; top: 15%; left: 0; transform: rotate(-2deg); animation: veinShimmer 12s ease-in-out infinite; }
+        .vein-2 { width: 80%; top: 35%; left: 10%; transform: rotate(1deg); animation: veinShimmer 15s ease-in-out infinite 3s; }
+        .vein-3 { width: 90%; top: 55%; left: 5%; transform: rotate(-0.5deg); animation: veinShimmer 18s ease-in-out infinite 6s; }
+        .vein-4 { width: 70%; top: 75%; left: 15%; transform: rotate(1.5deg); animation: veinShimmer 14s ease-in-out infinite 9s; }
+        .vein-vertical { width: 1px; height: 100%; background: linear-gradient(180deg, transparent 0%, rgba(212, 168, 83, 0.05) 30%, rgba(212, 168, 83, 0.1) 50%, rgba(212, 168, 83, 0.05) 70%, transparent 100%); }
+        .vein-v1 { left: 20%; top: 0; animation: veinVPulse 10s ease-in-out infinite; }
+        .vein-v2 { left: 50%; top: 0; animation: veinVPulse 12s ease-in-out infinite 4s; }
+        .vein-v3 { left: 80%; top: 0; animation: veinVPulse 11s ease-in-out infinite 7s; }
+        
+        @keyframes veinShimmer { 0%, 100% { opacity: 0.3; } 50% { opacity: 0.7; } }
+        @keyframes veinVPulse { 0%, 100% { opacity: 0.2; } 50% { opacity: 0.5; } }
+        
+        .marble-glow { position: absolute; width: 400px; height: 400px; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; animation: glowPulse 8s ease-in-out infinite; }
+        .glow-1 { top: -100px; left: -100px; background: radial-gradient(circle, rgba(212, 168, 83, 0.15) 0%, transparent 70%); }
+        .glow-2 { bottom: -100px; right: -100px; background: radial-gradient(circle, rgba(212, 168, 83, 0.1) 0%, transparent 70%); animation-delay: 4s; }
+        @keyframes glowPulse { 0%, 100% { opacity: 0.5; transform: scale(1); } 50% { opacity: 0.8; transform: scale(1.1); } }
+
+        /* ============================================
+           CARD STYLES - COMPLETELY REVISED
+           ============================================ */
+        .collection-card { 
+            position: relative; 
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); 
+            overflow: hidden; 
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            border-radius: 1.5rem;
+            background: linear-gradient(180deg, #1A1A1A 0%, #141414 100%);
+            border: 1px solid rgba(212, 168, 83, 0.2);
+        }
+        
+        .card-dark-style .card-type { color: #D4A853; }
+        .card-dark-style .card-title { color: #FFFFFF; }
+        .card-dark-style .card-volume { color: #AAAAAA; }
+        .card-dark-style .card-desc { color: #CCCCCC; }
+
+        /* Card Details - Always Visible */
+        .card-details { 
+            max-height: 500px;
+            overflow: hidden; 
+            opacity: 1;
+            padding: 20px 16px 24px 16px;
+            background: rgba(20, 20, 20, 0.95); 
+            margin-top: auto;
+        }
+        
+        .card-details-inner { 
+            border-top: 1px solid rgba(212, 168, 83, 0.3); 
+            padding-top: 16px; 
+        }
+        .card-details-inner p { color: #CCCCCC; }
+        .card-details-inner .price-text { color: #FFFFFF; }
+        .card-details-inner .notes-label { color: #AAAAAA; }
+
+        /* Glow Color Variables per Card */
+        .collection-card[data-glow="gold"] { --glow-color: var(--glow-gold); }
+        .collection-card[data-glow="white"] { --glow-color: var(--glow-white); }
+        .collection-card[data-glow="blue"] { --glow-color: var(--glow-blue); }
+        .collection-card[data-glow="brown"] { --glow-color: var(--glow-brown); }
+
+        /* Active Card Effects (Floating, Breathing, Glowing) */
+        .scroll-item.is-center .collection-card {
+            animation: cardFloatBreathe 4s ease-in-out infinite;
+            border-color: rgba(var(--glow-color), 0.8);
+            box-shadow: 
+                0 0 30px rgba(var(--glow-color), 0.6),
+                0 0 60px rgba(var(--glow-color), 0.3),
+                0 0 90px rgba(var(--glow-color), 0.15),
+                0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .scroll-item.is-center .collection-card::before {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            border-radius: inherit;
+            padding: 2px;
+            background: linear-gradient(
+                135deg,
+                rgba(var(--glow-color), 0.8) 0%,
+                rgba(var(--glow-color), 0.2) 25%,
+                rgba(var(--glow-color), 0.6) 50%,
+                rgba(var(--glow-color), 0.2) 75%,
+                rgba(var(--glow-color), 0.8) 100%
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderGlow 3s linear infinite;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        @keyframes cardFloatBreathe {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-15px) scale(1.02); }
+        }
+
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+
+        .card-image { 
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1), filter 0.4s ease; 
+        }
+        
+        .scroll-item.is-center .card-image { 
+            filter: brightness(1.15); 
+        }
+
+        /* Buy Button Enhancement */
+        .card-buy-btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .card-buy-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card-buy-btn:hover::before {
+            left: 100%;
+        }
+
+        .card-buy-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+        }
+
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease; }
+        .faq-item.active .faq-content { max-height: 300px; }
+        .faq-icon { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+
+        .testimonial-card { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; }
+        .testimonial-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(184, 134, 11, 0.12); }
+        .founder-photo { object-fit: cover; object-position: center; }
+        .volume-text { font-family: 'Inter', sans-serif; font-weight: 500; }
+
+        .gateway-btn { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(212, 168, 83, 0.3); border-radius: 16px; transition: all 0.3s ease; text-decoration: none; color: white; min-width: 90px; }
+        .gateway-btn:hover { background: rgba(212, 168, 83, 0.2); border-color: rgba(212, 168, 83, 0.6); transform: translateY(-4px); }
+        .gateway-btn svg { width: 32px; height: 32px; margin-bottom: 8px; fill: currentColor; }
+        
+        .bg-marble-dark { background-color: #1F1F1F; position: relative; overflow: hidden; }
+        .bg-marble-dark::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E"); opacity: 0.4; pointer-events: none; z-index: 0; }
+        
+        .studio-spotlight { position: absolute; width: 60%; height: 60%; pointer-events: none; z-index: 0; opacity: 0.6; filter: blur(40px); }
+        .spotlight-tl { top: 0; left: 0; background: radial-gradient(circle at top left, rgba(255,255,255, 0.15) 0%, transparent 50%); animation: pulseSpotlight 8s ease-in-out infinite; }
+        .spotlight-tr { top: 0; right: 0; background: radial-gradient(circle at top right, rgba(255,255,255, 0.15) 0%, transparent 50%); animation: pulseSpotlight 8s ease-in-out infinite 2s; }
+        .spotlight-bl { bottom: 0; left: 0; background: radial-gradient(circle at bottom left, rgba(255,255,255, 0.12) 0%, transparent 50%); animation: pulseSpotlight 8s ease-in-out infinite 4s; }
+        .spotlight-br { bottom: 0; right: 0; background: radial-gradient(circle at bottom right, rgba(255,255,255, 0.12) 0%, transparent 50%); animation: pulseSpotlight 8s ease-in-out infinite 6s; }
+        @keyframes pulseSpotlight { 0%, 100% { opacity: 0.4; transform: scale(1); } 50% { opacity: 0.7; transform: scale(1.1); } }
+        
+        .gold-lines-container { position: absolute; inset: 0; overflow: hidden; z-index: 0; pointer-events: none; }
+        .gold-line-anim { position: absolute; background: linear-gradient(90deg, transparent, #D4A853, transparent); opacity: 0.2; height: 1px; width: 100%; left: 0; }
+        .gold-line-anim.vertical { width: 1px; height: 100%; top: 0; background: linear-gradient(180deg, transparent, #D4A853, transparent); }
+        .line-anim-1 { animation: moveLine 15s linear infinite; top: 20%; }
+        .line-anim-2 { animation: moveLine 20s linear infinite reverse; top: 50%; animation-delay: -5s; }
+        .line-anim-3 { animation: moveLine 18s linear infinite; top: 80%; animation-delay: -10s; }
+        .v-line-anim-1 { animation: moveVLine 12s linear infinite; left: 20%; }
+        .v-line-anim-2 { animation: moveVLine 16s linear infinite reverse; left: 80%; animation-delay: -4s; }
+        @keyframes moveLine { 0% { transform: translateX(-100%); } 100% { transform: translateX(100vw); } }
+        @keyframes moveVLine { 0% { transform: translateY(-100%); } 100% { transform: translateY(100vh); } }
+        
+        .luxury-frame { position: relative; display: inline-block; padding: 16px 40px; background: rgba(40, 40, 40, 0.9); border: 1px solid rgba(212, 168, 83, 0.5); border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+        .luxury-frame::before, .luxury-frame::after { content: ''; position: absolute; width: 40px; height: 40px; border: 2px solid #D4A853; transition: all 0.4s ease; }
+        .luxury-frame::before { top: -5px; left: -5px; border-right: none; border-bottom: none; border-radius: 8px 0 0 0; }
+        .luxury-frame::after { bottom: -5px; right: -5px; border-left: none; border-top: none; border-radius: 0 0 8px 0; }
+        .luxury-frame:hover::before, .luxury-frame:hover::after { width: 50px; height: 50px; }
+        
+        .vertical-founder-card { position: relative; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 1.25rem; background: rgba(35, 35, 35, 0.95); border-radius: 1.25rem; border: 1px solid rgba(212, 168, 83, 0.2); transition: all 0.4s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.4); overflow: hidden; z-index: 1; }
+        .vertical-founder-card::before { content: ''; position: absolute; top: -50%; left: 50%; transform: translateX(-50%); width: 150%; height: 150%; background: radial-gradient(ellipse at center, rgba(255,255,255,0.08) 0%, transparent 60%); pointer-events: none; z-index: -1; }
+        .vertical-founder-card:hover { transform: translateY(-5px) scale(1.01); box-shadow: 0 15px 40px rgba(0,0,0,0.5); border-color: rgba(212, 168, 83, 0.6); }
+        .vertical-founder-card img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; border: 3px solid #D4A853; margin-bottom: 1rem; box-shadow: 0 0 15px rgba(212, 168, 83, 0.2); }
+        
+        .collection-section-title { color: #FFFFFF; text-shadow: 0 0 40px rgba(212, 168, 83, 0.3); }
+        .collection-section-subtitle { color: rgba(255, 255, 255, 0.8); }
+        .collection-section-label { color: #D4A853; text-shadow: 0 0 20px rgba(212, 168, 83, 0.4); }
+
+        button:focus-visible, a:focus-visible { outline: 2px solid #D4A853; outline-offset: 2px; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+        }
+
+        @media (max-width: 640px) {
+            .scroll-item { flex: 0 0 260px; }
+            .scroll-container { padding-left: calc(50% - 130px); padding-right: calc(50% - 130px); }
+            .scroll-item.is-left, .scroll-item.is-right { transform: scale(0.9) rotateY(0deg); }
+            .carousel-nav-btn { width: 36px; height: 36px; }
+            .carousel-nav-btn svg { width: 20px; height: 20px; }
+        }
+    </style>
+</head>
+<body class="text-gray-900">
+    
+    <!-- Background Effects Container -->
+    <div class="gold-mist-layer" aria-hidden="true">
+        <div class="gold-mist mist-1"></div>
+        <div class="gold-mist mist-2"></div>
+    </div>
+    <div class="silver-particles-container" id="silver-particles" aria-hidden="true"></div>
+
+    <a href="#collection" class="skip-link">Skip to Collection</a>
+
+    <main class="w-full relative z-10">
+        
+        <!-- HERO SECTION -->
+        <section class="w-full min-h-screen flex flex-col items-center justify-center px-6 py-16 bg-cream-50 relative" aria-labelledby="hero-title">
+            <div class="fade-elegant mb-8 z-10">
+                <p class="text-gold-500 text-xl md:text-2xl tracking-[0.3em] uppercase font-semibold select-none">welcome, Rimmers</p>
+            </div>
+            <div class="fade-elegant delay-1 w-full max-w-sm mx-auto mb-10 z-10">
+                <div class="hero-image-wrapper">
+                    <img src="https://cdn.scalev.id/uploads/1772899121/WlQov6EtoFv6d10fqJT7NQ/1772899121169-logo-LP-2.webp" alt="RHYM Perfume Logo" class="hero-img-breathe" width="400" height="400" loading="eager">
+                </div>
+            </div>
+            <div class="relative z-10 text-center max-w-lg">
+                <h1 id="hero-title" class="sr-only">RHYM Perfume - Be Confident</h1>
+                <p class="fade-elegant delay-2 text-gold-500 text-xl md:text-2xl tracking-[0.3em] uppercase mb-4 font-semibold">Be Confident</p>
+                <p class="fade-elegant delay-3 text-gray-600 text-lg md:text-xl leading-relaxed mb-14 font-body max-w-sm mx-auto">Aroma yang membawa kepercayaan diri Anda ke level berikutnya.</p>
+                <div class="fade-elegant delay-4">
+                    <button class="btn-premium px-12 py-5 rounded-full text-lg font-semibold tracking-widest uppercase" onclick="scrollToCollection()" aria-label="Explore RHYM Collection">Explore RHYM</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOOK SECTION -->
+        <section class="w-full py-24 px-6 bg-white relative z-10" aria-labelledby="hook-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal text-center">
+                    <h2 id="hook-title" class="font-display text-3xl md:text-4xl font-semibold text-gray-900 mb-8 leading-snug">Pernahkah Anda Merasa<br><span class="text-gold-500">Kurang Percaya Diri</span><br>Karena Kurang Wangi?</h2>
+                    <div class="bg-cream-50 rounded-3xl p-10 border border-gold-100/50">
+                        <p class="text-gray-600 font-body text-xl leading-relaxed mb-8">Aroma adalah <strong class="text-gray-800">identitas tak terlihat</strong> yang Anda bawa setiap hari. Tanpa kita sadari, aroma turut memberikan kesan tersendiri bagi Anda.</p>
+                        <p class="text-gray-500 font-body text-lg leading-relaxed">Aroma yang tepat menciptakan kehadiran Anda tidak hanya terasa, tetapi juga terkenang.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROBLEM SECTION -->
+        <section class="w-full py-24 px-6 bg-cream-50 relative z-10" aria-labelledby="problem-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal text-center">
+                    <h2 id="problem-title" class="font-display text-3xl md:text-4xl font-semibold text-gray-900 mb-14 leading-snug">Kehadiran Anda Terasa<br><span class="text-gold-500">Kurang Berkesan?</span></h2>
+                    <div class="space-y-6 text-left">
+                        <article class="interactive-card flex items-start gap-5 p-6 bg-white rounded-2xl border border-gold-100/50">
+                            <div class="number-badge w-9 h-9 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0 mt-1" aria-hidden="true"><span class="text-gold-500 text-base font-display">1</span></div>
+                            <p class="text-gray-700 text-lg leading-relaxed font-body">Anda mempersiapkan penampilan dengan sempurna, namun tetap merasa ada yang kurang.</p>
+                        </article>
+                        <article class="interactive-card flex items-start gap-5 p-6 bg-white rounded-2xl border border-gold-100/50">
+                            <div class="number-badge w-9 h-9 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0 mt-1" aria-hidden="true"><span class="text-gold-500 text-base font-display">2</span></div>
+                            <p class="text-gray-700 text-lg leading-relaxed font-body">Parfum yang Anda gunakan terlalu cepat menghilang sepanjang hari.</p>
+                        </article>
+                        <article class="interactive-card flex items-start gap-5 p-6 bg-white rounded-2xl border border-gold-100/50">
+                            <div class="number-badge w-9 h-9 rounded-full bg-gold-100 flex items-center justify-center flex-shrink-0 mt-1" aria-hidden="true"><span class="text-gold-500 text-base font-display">3</span></div>
+                            <p class="text-gray-700 text-lg leading-relaxed font-body">Aroma parfum di pasaran terasa umum, tidak mencerminkan kepribadian unik Anda.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AGITATE SECTION -->
+        <section class="w-full py-24 px-6 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden z-10" aria-labelledby="agitate-title">
+            <div class="absolute inset-0 opacity-5" aria-hidden="true"><svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><pattern id="p" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse"><circle cx="20" cy="20" r="1" fill="#D4A853"/></pattern><rect fill="url(#p)" width="100%" height="100%"/></svg></div>
+            <div class="max-w-xl mx-auto relative z-10">
+                <div class="reveal text-center">
+                    <p class="text-gold-400 text-base tracking-[0.25em] uppercase mb-12">Bayangkan</p>
+                    <h2 id="agitate-title" class="font-display text-3xl md:text-4xl font-semibold mb-12 leading-snug">Tanpa Aroma yang Tepat,<br><span class="text-gold-400">Kepercayaan Diri Anda Melemah</span></h2>
+                    <div class="space-y-8 text-left mb-12">
+                        <article class="interactive-card p-7 border border-gray-700 rounded-2xl bg-gray-800/50 backdrop-blur">
+                            <div class="flex items-start gap-5 relative z-10"><span class="text-4xl font-display text-gold-400" aria-hidden="true">01</span><div><p class="text-gray-300 text-lg leading-relaxed font-body">Pertemuan bisnis penting berlalu tanpa kesan berarti. Padahal Anda sudah mempersiapkan segalanya dengan matang.</p></div></div>
+                        </article>
+                        <article class="interactive-card p-7 border border-gray-700 rounded-2xl bg-gray-800/50 backdrop-blur">
+                            <div class="flex items-start gap-5 relative z-10"><span class="text-4xl font-display text-gold-400" aria-hidden="true">02</span><div><p class="text-gray-300 text-lg leading-relaxed font-body">Momen spesial terasa biasa saja tanpa "sesuatu" yang membuat orang lain mengingat kehadiran Anda.</p></div></div>
+                        </article>
+                        <article class="interactive-card p-7 border border-gray-700 rounded-2xl bg-gray-800/50 backdrop-blur">
+                            <div class="flex items-start gap-5 relative z-10"><span class="text-4xl font-display text-gold-400" aria-hidden="true">03</span><div><p class="text-gray-300 text-lg leading-relaxed font-body">Anda mulai ragu dengan diri sendiri. "Apakah saya sudah cukup berkesan?" menjadi pertanyaan yang menghantui.</p></div></div>
+                        </article>
+                    </div>
+                    <div class="relative bg-gradient-to-r from-gold-900/30 to-transparent p-8 rounded-2xl border border-gold-500/20">
+                        <blockquote><p class="text-gold-300 italic text-xl font-body relative z-10">"Aroma adalah elemen kepercayaan diri yang sering diabaikan, namun memberikan dampak besar."</p></blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOLUTION SECTION -->
+        <section class="w-full py-24 px-6 bg-cream-50 relative z-10" aria-labelledby="solution-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal text-center">
+                    <p class="text-gold-500 text-sm tracking-[0.25em] uppercase mb-6">Solusinya</p>
+                    <h2 id="solution-title" class="font-display text-3xl md:text-4xl font-semibold text-gray-900 mb-6">RHYM Perfume</h2>
+                    <p class="text-gold-400 text-lg italic mb-12 font-body">Your Confidence in a Bottle</p>
+                    <div class="grid gap-5 text-left mb-12">
+                        <article class="feature-card p-6 bg-white rounded-2xl shadow-sm border border-gold-50">
+                            <div class="flex items-center gap-5 relative z-10">
+                                <div class="icon-container w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+                                <div><h3 class="font-display font-semibold text-gray-900 text-lg">Ketahanan Lebih dari 8 Jam</h3><p class="text-gray-500 text-base font-body">Menemani aktivitas Anda seharian</p></div>
+                            </div>
+                        </article>
+                        <article class="feature-card p-6 bg-white rounded-2xl shadow-sm border border-gold-50">
+                            <div class="flex items-center gap-5 relative z-10">
+                                <div class="icon-container w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg></div>
+                                <div><h3 class="font-display font-semibold text-gray-900 text-lg">Aroma yang Tidak Menyengat</h3><p class="text-gray-500 text-base font-body">Nyaman digunakan sehari-hari</p></div>
+                            </div>
+                        </article>
+                        <article class="feature-card p-6 bg-white rounded-2xl shadow-sm border border-gold-50">
+                            <div class="flex items-center gap-5 relative z-10">
+                                <div class="icon-container w-12 h-12 bg-gold-50 rounded-xl flex items-center justify-center" aria-hidden="true"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg></div>
+                                <div><h3 class="font-display font-semibold text-gray-900 text-lg">Unisex & Versatile</h3><p class="text-gray-500 text-base font-body">Untuk segala kesempatan</p></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLECTION SECTION -->
+        <section class="w-full py-24 px-6 bg-collection-marble relative z-10" id="collection" aria-labelledby="collection-title">
+            <div class="marble-veins" aria-hidden="true">
+                <div class="gold-vein vein-1"></div><div class="gold-vein vein-2"></div><div class="gold-vein vein-3"></div><div class="gold-vein vein-4"></div>
+                <div class="vein-vertical vein-v1"></div><div class="vein-vertical vein-v2"></div><div class="vein-vertical vein-v3"></div>
+            </div>
+            <div class="marble-glow glow-1"></div><div class="marble-glow glow-2"></div>
+
+            <div class="max-w-xl mx-auto relative z-10">
+                <div class="reveal">
+                    <div class="text-center mb-10">
+                        <p class="collection-section-label text-sm tracking-[0.25em] uppercase mb-5">Collection</p>
+                        <h2 id="collection-title" class="font-display text-3xl md:text-4xl font-semibold collection-section-title mb-3">Our Scents</h2>
+                        <p class="collection-section-subtitle font-body text-base">Geser untuk melihat varian lainnya.</p>
+                    </div>
+
+                    <div class="carousel-wrapper" role="region" aria-label="Product Carousel">
+                        
+                        <button class="carousel-nav-btn left" onclick="prevSlide()" aria-label="Previous product">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+
+                        <button class="carousel-nav-btn right" onclick="nextSlide()" aria-label="Next product">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+
+                        <div class="scroll-container" id="carousel-container">
+                            <!-- Card 1: Orion -->
+                            <article class="scroll-item">
+                                <div class="collection-card card-dark-style rounded-3xl overflow-hidden" data-glow="gold">
+                                    <div class="absolute top-3 left-3 z-10"><span class="px-3 py-1 bg-gold-500 text-white text-[10px] rounded-full uppercase tracking-wider">Signature</span></div>
+                                    <div class="aspect-square overflow-hidden"><img src="https://placehold.co/400x400/1A1A2E/7F8C8D?text=Orion" alt="RHYM Orion - Parfum dengan aroma hangat dan misterius" class="card-image w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
+                                    <div class="p-5"><span class="text-xs card-type uppercase tracking-widest">Eau de Parfum</span><h3 class="font-display text-xl font-semibold card-title mt-2">RHYM – Orion</h3><p class="text-sm mt-1 card-volume volume-text">50 ml</p><p class="text-sm font-body mt-2 card-desc">Hangat, manis, misterius, elegan, gourmand</p></div>
+                                    <div class="card-details"><div class="card-details-inner"><p class="text-xs notes-label uppercase tracking-wide mb-3 font-semibold">Notes:</p><p class="text-base font-body mb-5">Top: Cardamom<br>Middle: Toffee<br>Base: Amberwood</p><p class="font-semibold text-2xl mb-5 price-text">IDR 249.000</p><a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="card-buy-btn inline-block w-full text-center py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-base font-semibold rounded-xl shadow hover:shadow-md transition-shadow">Get This RHYM</a></div></div>
+                                </div>
+                            </article>
+                            
+                            <!-- Card 2: Radiance -->
+                            <article class="scroll-item">
+                                <div class="collection-card card-dark-style rounded-3xl overflow-hidden" data-glow="white">
+                                    <div class="absolute top-3 left-3 z-10"><span class="px-3 py-1 bg-gold-500 text-white text-[10px] rounded-full uppercase tracking-wider">Signature</span></div>
+                                    <div class="aspect-square overflow-hidden"><img src="https://placehold.co/400x400/FFF5E4/E8A87C?text=Radiance" alt="RHYM Radiance - Parfum dengan aroma fresh dan floral" class="card-image w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
+                                    <div class="p-5"><span class="text-xs card-type uppercase tracking-widest">Eau de Parfum</span><h3 class="font-display text-xl font-semibold card-title mt-2">RHYM – Radiance</h3><p class="text-sm mt-1 card-volume volume-text">50 ml</p><p class="text-sm font-body mt-2 card-desc">Fresh, floral, cerah, feminin, elegan</p></div>
+                                    <div class="card-details"><div class="card-details-inner"><p class="text-xs notes-label uppercase tracking-wide mb-3 font-semibold">Notes:</p><p class="text-base font-body mb-5">Top: Bergamot, Orange Blossom, Pear<br>Middle: Jasmine, Violet Leaf, Tuberose<br>Base: Bourbon Vanilla, Cedarwood, White Musk</p><p class="font-semibold text-2xl mb-5 price-text">IDR 249.000</p><a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="card-buy-btn inline-block w-full text-center py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-base font-semibold rounded-xl shadow hover:shadow-md transition-shadow">Get This RHYM</a></div></div>
+                                </div>
+                            </article>
+                            
+                            <!-- Card 3: Golden Voyage -->
+                            <article class="scroll-item">
+                                <div class="collection-card card-dark-style rounded-3xl overflow-hidden relative" data-glow="gold">
+                                    <div class="absolute top-3 left-3 z-10"><span class="px-3 py-1 bg-gold-500 text-white text-[10px] rounded-full uppercase tracking-wider">Premium</span></div>
+                                    <div class="aspect-square overflow-hidden"><img src="https://cdn.scalev.id/uploads/1772894044/0DGQIDgr70NHv72-SwYYTw/1772894044376-GV.webp" alt="RHYM Golden Voyage - Parfum dengan aroma klasik dan berkelas" class="card-image w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
+                                    <div class="p-5"><span class="text-xs card-type uppercase tracking-widest font-medium">Extrait de Parfum</span><h3 class="font-display text-xl font-semibold card-title mt-2">RHYM – Golden Voyage</h3><p class="text-sm mt-1 card-volume volume-text">30 ml</p><p class="text-sm font-body mt-2 card-desc">Hangat, menenangkan, klasik, elegan, berkelas</p></div>
+                                    <div class="card-details"><div class="card-details-inner"><p class="text-xs notes-label uppercase tracking-wide mb-3 font-semibold">Notes:</p><p class="text-base font-body mb-5">Top: Lavender, Cinnamon, Palisander Rosewood<br>Middle: Lily, Cedar, Rose<br>Base: Amber, Vanilla, Musk</p><p class="font-semibold text-2xl mb-5 price-text">IDR 150.000</p><a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="card-buy-btn inline-block w-full text-center py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-base font-semibold rounded-xl shadow hover:shadow-md transition-shadow">Get This RHYM</a></div></div>
+                                </div>
+                            </article>
+                            
+                            <!-- Card 4: Blue Whisper -->
+                            <article class="scroll-item">
+                                <div class="collection-card card-dark-style rounded-3xl overflow-hidden relative" data-glow="blue">
+                                    <div class="absolute top-3 left-3 z-10"><span class="px-3 py-1 bg-gold-500 text-white text-[10px] rounded-full uppercase tracking-wider">Premium</span></div>
+                                    <div class="aspect-square overflow-hidden"><img src="https://cdn.scalev.id/uploads/1772893838/hns80aeCfvRVbEm0xRwniQ/1772893838209-BW.webp" alt="RHYM Blue Whisper - Parfum dengan aroma fresh dan aquatic" class="card-image w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
+                                    <div class="p-5"><span class="text-xs card-type uppercase tracking-widest font-medium">Extrait de Parfum</span><h3 class="font-display text-xl font-semibold card-title mt-2">RHYM – Blue Whisper</h3><p class="text-sm mt-1 card-volume volume-text">30 ml</p><p class="text-sm font-body mt-2 card-desc">Fresh, aquatic, ringan, bersih, tenang</p></div>
+                                    <div class="card-details"><div class="card-details-inner"><p class="text-xs notes-label uppercase tracking-wide mb-3 font-semibold">Notes:</p><p class="text-base font-body mb-5">All Notes: Pomegranate, Lotus</p><p class="font-semibold text-2xl mb-5 price-text">IDR 150.000</p><a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="card-buy-btn inline-block w-full text-center py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-base font-semibold rounded-xl shadow hover:shadow-md transition-shadow">Get This RHYM</a></div></div>
+                                </div>
+                            </article>
+                            
+                            <!-- Card 5: Brown Mirage -->
+                            <article class="scroll-item">
+                                <div class="collection-card card-dark-style rounded-3xl overflow-hidden relative" data-glow="brown">
+                                    <div class="absolute top-3 left-3 z-10"><span class="px-3 py-1 bg-gold-500 text-white text-[10px] rounded-full uppercase tracking-wider">Premium</span></div>
+                                    <div class="aspect-square overflow-hidden"><img src="https://cdn.scalev.id/uploads/1772894290/5OmIzlbgysbp8gmCq6piVA/1772894289817-BM.webp" alt="RHYM Brown Mirage - Parfum dengan aroma smoky dan sensual" class="card-image w-full h-full object-cover" width="400" height="400" loading="lazy"></div>
+                                    <div class="p-5"><span class="text-xs card-type uppercase tracking-widest font-medium">Extrait de Parfum</span><h3 class="font-display text-xl font-semibold card-title mt-2">RHYM – Brown Mirage</h3><p class="text-sm mt-1 card-volume volume-text">30 ml</p><p class="text-sm font-body mt-2 card-desc">Hangat, smoky, maskulin, misterius, sensual</p></div>
+                                    <div class="card-details"><div class="card-details-inner"><p class="text-xs notes-label uppercase tracking-wide mb-3 font-semibold">Notes:</p><p class="text-base font-body mb-5">Top: Guaic Wood, Rum<br>Middle: Cedar<br>Base: Tobacco Leaf, Cardamom</p><p class="font-semibold text-2xl mb-5 price-text">IDR 150.000</p><a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="card-buy-btn inline-block w-full text-center py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-white text-base font-semibold rounded-xl shadow hover:shadow-md transition-shadow">Get This RHYM</a></div></div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="text-center mt-12">
+                        <a href="https://wa.me/6285191563493" target="_blank" rel="noopener noreferrer" class="btn-premium inline-block px-12 py-5 rounded-full text-lg font-semibold tracking-widest uppercase">Contact us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Objection Handling -->
+        <section class="w-full py-24 px-6 bg-cream-50 relative z-10" aria-labelledby="objection-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal">
+                    <div class="text-center mb-12">
+                        <p class="text-gold-500 text-sm tracking-[0.25em] uppercase mb-5">Kami Memahami</p>
+                        <h2 id="objection-title" class="font-display text-2xl md:text-3xl font-semibold text-gray-900">Membeli Parfum Online Tanpa Mencium?</h2>
+                    </div>
+                    <div class="bg-white rounded-3xl p-10 shadow-sm border border-gold-50">
+                        <p class="text-gray-600 text-center font-body text-lg leading-relaxed mb-10">RHYM dirancang dengan karakter aroma yang tidak menyengat, nyaman digunakan sehari-hari maupun acara spesial. Cocok untuk berbagai kesempatan.</p>
+                        <ul class="grid gap-4" role="list">
+                            <li class="interactive-card flex items-center gap-4 p-5 bg-cream-50 rounded-xl"><svg class="w-6 h-6 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700 text-base font-body">Deskripsi aroma detail dan jujur</span></li>
+                            <li class="interactive-card flex items-center gap-4 p-5 bg-cream-50 rounded-xl"><svg class="w-6 h-6 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700 text-base font-body">Konsultasi gratis sebelum pembelian</span></li>
+                            <li class="interactive-card flex items-center gap-4 p-5 bg-cream-50 rounded-xl"><svg class="w-6 h-6 text-gold-400 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg><span class="text-gray-700 text-base font-body">Kemasan eksklusif dan aman</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section class="w-full py-20 px-6 bg-gold-500 relative z-10" id="stats-section" aria-labelledby="stats-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal text-center text-white">
+                    <h2 id="stats-title" class="sr-only">Statistik RHYM Perfume</h2>
+                    <div class="grid grid-cols-3 gap-8" role="list">
+                        <div role="listitem"><span class="block text-4xl md:text-5xl font-display font-bold"><span id="stat-sold">0</span>+</span><span class="text-sm opacity-80 tracking-wider">Botol Terjual</span></div>
+                        <div role="listitem"><span class="block text-4xl md:text-5xl font-display font-bold"><span id="stat-rating">0.0</span></span><span class="text-sm opacity-80 tracking-wider">Rating Kepuasan</span></div>
+                        <div role="listitem"><span class="block text-4xl md:text-5xl font-display font-bold"><span id="stat-variant">0</span></span><span class="text-sm opacity-80 tracking-wider">Varian Aroma</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="w-full py-24 px-6 bg-white relative z-10" aria-labelledby="testimonial-title">
+            <div class="max-w-5xl mx-auto">
+                <div class="reveal">
+                    <div class="text-center mb-12"><p class="text-gold-500 text-sm tracking-[0.25em] uppercase mb-5">Testimoni</p><h2 id="testimonial-title" class="font-display text-2xl md:text-3xl font-semibold text-gray-900">Apa Kata Mereka</h2></div>
+                    <div class="testimonial-scroll-container" role="list">
+                        <div class="testimonial-group" role="listitem">
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">AS</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">A. S. Mayangsari</h3><p class="text-sm text-gray-500">Hearty Service Trainer, Surabaya</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Aku percaya first impression itu penting. Makanya aku pilih parfum yang tidak terlalu ramai tapi tetap berkelas. Waktu mencoba Rhym, aku langsung suka. Aromanya lembut, classy, dan nyaman dipakai seharian."</p></blockquote>
+                            </article>
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">ER</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">Eko Rahmawan</h3><p class="text-sm text-gray-500">Manager Operational PT. Cipta Solusi Logistik, Surabaya</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Alhamdulillah nemuin parfum yang ga kaleng-kaleng mantap parfum RHYM, harumnya tahan lama walaupun dipakai seharian beraktivitas di luar."</p></blockquote>
+                            </article>
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">DA</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">Dimas Aziz</h3><p class="text-sm text-gray-500">Third Officer Tanker, Sampit</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Awalnya coba karena direkomendasikan teman, ternyata aromanya benar-benar kelas premium. Wanginya elegan, tahan lama seharian."</p></blockquote>
+                            </article>
+                        </div>
+                        <div class="testimonial-group" role="listitem">
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">RF</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">Rasya Fariansyah</h3><p class="text-sm text-gray-500">Kadet Pelayaran, Surabaya</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Kalau mau wangi yang beda dari yang lain, coba RHYM. Simple tapi bikin temen di kampus pada notice asli gokil ni parfum."</p></blockquote>
+                            </article>
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">HO</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">Havings Orient</h3><p class="text-sm text-gray-500">Perwira Kapal Niaga, Manado</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Awalnya nyoba-nyoba, di kasih testimoni 1 hari ga ilang Wanginya, Coba 1 Varian Ternyata Pas Baju Belum di Cuci Bisa sampe 2 Hari Ga ilang-ilang, Temen-temen juga Bilang Baunya ninggal lama di tempat."</p></blockquote>
+                            </article>
+                            <article class="testimonial-card bg-cream-50 rounded-2xl p-7 border border-gold-50 h-full">
+                                <div class="flex items-center gap-4 mb-5"><div class="w-14 h-14 rounded-full overflow-hidden bg-gold-100 flex items-center justify-center flex-shrink-0" aria-hidden="true"><span class="text-gold-500 font-display font-semibold text-lg">L</span></div><div class="flex-1"><h3 class="font-display font-semibold text-gray-900 text-base">Lusiana</h3><p class="text-sm text-gray-500">Mahasiswi ITS, Surabaya</p></div><div class="flex gap-1 text-gold-400 text-lg" aria-label="5 dari 5 bintang">★★★★★</div></div>
+                                <blockquote><p class="text-gray-600 font-body text-base leading-relaxed italic">"Parfum dari RHYM punya aroma yang sangat enak, selain itu juga tahan lama sejak awal dipakai sampai beberapa jam kemudian, dan yang pastinya cocok untuk semua aktivitas."</p></blockquote>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-3 mt-8" aria-hidden="true"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7"/></svg><span class="text-sm text-gray-400 tracking-wider">GESER</span><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5l7 7-7 7"/></svg></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="w-full py-24 px-6 bg-marble-dark relative overflow-hidden z-10" id="about-section" aria-labelledby="about-title">
+            <div class="studio-spotlight spotlight-tl" aria-hidden="true"></div><div class="studio-spotlight spotlight-tr" aria-hidden="true"></div><div class="studio-spotlight spotlight-bl" aria-hidden="true"></div><div class="studio-spotlight spotlight-br" aria-hidden="true"></div>
+            <div class="gold-lines-container" aria-hidden="true"><div class="gold-line-anim line-anim-1"></div><div class="gold-line-anim line-anim-2"></div><div class="gold-line-anim line-anim-3"></div><div class="gold-line-anim vertical v-line-anim-1"></div><div class="gold-line-anim vertical v-line-anim-2"></div></div>
+            
+            <div class="max-w-4xl mx-auto relative z-10">
+                <div class="reveal text-center">
+                    <h2 id="about-title" class="font-display text-2xl md:text-3xl font-semibold text-white mb-8">About RHYM</h2>
+                    <p class="text-gray-300 font-body text-lg leading-relaxed mb-10 max-w-md mx-auto">Didirikan pada tahun 2025 oleh 3 anak muda asal Surabaya dengan visi menghadirkan wewangian elegan sebagai solusi sederhana untuk membantu meningkatkan rasa percaya diri dalam setiap aktivitas.</p>
+                    <div class="luxury-frame mb-12"><h3 class="font-display text-lg font-semibold text-gold-400">The "R" Founder's</h3></div>
+                    <div class="flex flex-col items-center gap-8">
+                        <article class="vertical-founder-card w-full max-w-xs">
+                            <img src="https://cdn.scalev.id/uploads/1772914979/OJMgO7hPfrzHxrtLayFHZQ/1772914979306-CMO.webp" alt="Foto Ryaas Lazuard - Founder RHYM Perfume" class="founder-photo" width="80" height="80" loading="lazy">
+                            <span class="text-xs tracking-[0.2em] text-gold-400 uppercase block mb-1">Founder</span><h3 class="font-display font-semibold text-white text-base mb-1">Ryaas Lazuard</h3><p class="text-gray-400 text-sm mt-1 font-body italic leading-relaxed">"RHYM hadir untuk membantu Anda tampil percaya diri dalam setiap langkah."</p>
+                        </article>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-2xl">
+                            <article class="vertical-founder-card">
+                                <img src="https://cdn.scalev.id/uploads/1772953846/YgQuA5nVwPjhesmOOoESAA/1772953846682-CFO.webp" alt="Foto Rizki Satria - Co-Founder RHYM Perfume" class="founder-photo" width="80" height="80" loading="lazy">
+                                <span class="text-xs tracking-[0.15em] text-gold-400 uppercase block mb-1">Co-Founder</span><h3 class="font-display font-semibold text-white text-base relative z-10">Rizki Satria</h3><p class="text-gray-400 text-sm mt-1 font-body italic">"Wewangian elegan yang menjadi bagian dari identitas Anda."</p>
+                            </article>
+                            <article class="vertical-founder-card">
+                                <img src="https://cdn.scalev.id/uploads/1772914963/jR6R-lUOEDzgsaE9m2YX4w/1772914962727-CEO.webp" alt="Foto Renzo Harefa - Co-Founder RHYM Perfume" class="founder-photo" width="80" height="80" loading="lazy">
+                                <span class="text-xs tracking-[0.15em] text-gold-400 uppercase block mb-1">Co-Founder</span><h3 class="font-display font-semibold text-white text-base relative z-10">Renzo Harefa</h3><p class="text-gray-400 text-sm mt-1 font-body italic">"Solusi sederhana untuk kehadiran yang tak terlupakan."</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="w-full py-24 px-6 bg-white relative z-10" aria-labelledby="faq-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal">
+                    <div class="text-center mb-12"><p class="text-gold-500 text-sm tracking-[0.25em] uppercase mb-5">FAQ</p><h2 id="faq-title" class="font-display text-2xl md:text-3xl font-semibold text-gray-900">Pertanyaan Umum</h2></div>
+                    <div class="space-y-4" id="faq-container" role="list"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Elements -->
+        <section class="w-full py-14 px-6 bg-cream-50 relative z-10" aria-labelledby="trust-title">
+            <div class="max-w-xl mx-auto">
+                <div class="reveal">
+                    <h2 id="trust-title" class="sr-only">Keunggulan RHYM Perfume</h2>
+                    <ul class="flex flex-wrap justify-center gap-8" role="list">
+                        <li class="interactive-card flex items-center gap-3 text-gray-600 p-4 rounded-xl"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg><span class="text-base font-body">Original 100%</span></li>
+                        <li class="interactive-card flex items-center gap-3 text-gray-600 p-4 rounded-xl"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg><span class="text-base font-body">Pengiriman Aman</span></li>
+                        <li class="interactive-card flex items-center gap-3 text-gray-600 p-4 rounded-xl"><svg class="w-6 h-6 text-gold-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/></svg><span class="text-base font-body">Konsultasi Gratis</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="w-full py-24 px-6 bg-gradient-to-b from-gray-900 to-gray-800 text-white relative overflow-hidden z-10" aria-labelledby="cta-title">
+            <div class="max-w-xl mx-auto relative z-10">
+                <div class="reveal text-center">
+                    <h2 id="cta-title" class="rhym-logo font-cinzel text-5xl md:text-6xl font-bold tracking-wider mb-5">RHYM</h2>
+                    <p class="text-gold-400 text-xl md:text-2xl tracking-[0.3em] uppercase mb-10 font-semibold">Be Confident</p>
+                    <p class="text-gray-300 text-lg mb-12 font-body max-w-sm mx-auto">Aroma yang membawa kepercayaan diri Anda ke level berikutnya.</p>
+                    <h3 class="font-display text-2xl md:text-3xl font-semibold text-white mb-8">Get your RHYM</h3>
+                    <div class="flex justify-center gap-5 mb-8">
+                        <a href="https://shopee.co.id/rhym_perfume" target="_blank" rel="noopener noreferrer" class="gateway-btn" aria-label="Beli di Shopee"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.41 16.09V20h-2.67v-1.93c-1.71-.36-3.16-1.46-3.27-3.4h1.96c.1 1.05.82 1.87 2.65 1.87 1.96 0 2.4-.98 2.4-1.59 0-.83-.44-1.61-2.67-2.14-2.48-.6-4.18-1.62-4.18-3.67 0-1.72 1.39-2.84 3.11-3.21V4h2.67v1.95c1.86.45 2.79 1.86 2.85 3.39H14.3c-.05-1.11-.64-1.87-2.22-1.87-1.5 0-2.4.68-2.4 1.64 0 .84.65 1.39 2.67 1.91s4.18 1.39 4.18 3.91c-.01 1.83-1.38 2.83-3.12 3.16z"/></svg><span class="text-sm font-sans font-semibold">Shopee</span></a>
+                        <a href="https://www.instagram.com/rhym_perfume?igsh=dnNiM3F1b2VjNGti" target="_blank" rel="noopener noreferrer" class="gateway-btn" aria-label="Kunjungi Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg><span class="text-sm font-sans font-semibold">Instagram</span></a>
+                        <a href="https://wa.me/6285191563493" target="_blank" rel="noopener noreferrer" class="gateway-btn" aria-label="Chat WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="text-sm font-sans font-semibold">WhatsApp</span></a>
+                    </div>
+                    <ul class="flex justify-center gap-8 text-base text-gray-400">
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Pengiriman Cepat</li>
+                        <li class="flex items-center gap-2"><svg class="w-5 h-5 text-gold-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>Kemasan Eksklusif</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Copyright -->
+        <footer class="w-full py-8 px-6 bg-gray-900 text-center relative z-10"><p class="text-gray-600 text-sm font-body tracking-wider">&copy; 2025 RHYM Perfume. All rights reserved.</p></footer>
+
+    </main>
+
+    <script>
+        // Initialize variables first
+        const carouselContainer = document.getElementById('carousel-container');
+        let items = [];
+        let cardWidth = 290 + 24;
+        let ticking = false;
+
+        // Generate Silver Particles
+        (function() {
+            const container = document.getElementById('silver-particles');
+            if (!container) return;
+            
+            const particleCount = 60;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('silver-particle');
+                
+                const size = Math.random() * 4 + 2;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 15 + 10;
+                const drift = (Math.random() - 0.5) * 200;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = left + '%';
+                particle.style.top = (Math.random() * 20 + 80) + '%';
+                particle.style.animationDelay = delay + 's';
+                particle.style.animationDuration = duration + 's';
+                particle.style.setProperty('--drift', drift + 'px');
+                
+                container.appendChild(particle);
+            }
+        })();
+
+        // FAQ Data
+        const faqData = [
+            { question: "Apakah RHYM cocok untuk pria dan wanita?", answer: "Ya, RHYM dirancang sebagai parfum unisex dengan karakter aroma yang seimbang dan versatile." },
+            { question: "Berapa lama ketahanan aroma RHYM?", answer: "Eau de Parfum: lebih dari 8 jam. Extrait de Parfum: hingga 18 jam dengan proyeksi yang lebih intens." },
+            { question: "Apakah pengiriman aman?", answer: "Ya, setiap botol dikemas dengan box eksklusif dan dilapisi bubble wrap untuk memastikan tiba dengan sempurna." },
+            { question: "Bagaimana cara mengetahui aroma yang cocok?", answer: "Anda dapat berkonsultasi gratis dengan tim kami. Kami akan membantu merekomendasikan varian yang sesuai dengan preferensi Anda." }
+        ];
+
+        // Initialize FAQ
+        const faqContainer = document.getElementById('faq-container');
+        if (faqContainer) {
+            faqData.forEach(function(item, index) {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item bg-cream-50 rounded-2xl overflow-hidden border border-gold-50';
+                faqItem.setAttribute('role', 'listitem');
+                faqItem.innerHTML = 
+                    '<button class="w-full flex items-center justify-between p-6 text-left" aria-expanded="false" aria-controls="faq-content-' + index + '">' +
+                        '<span class="font-display font-medium text-gray-900 text-base pr-4">' + item.question + '</span>' +
+                        '<svg class="faq-icon w-5 h-5 text-gold-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">' +
+                            '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>' +
+                        '</svg>' +
+                    '</button>' +
+                    '<div class="faq-content" id="faq-content-' + index + '">' +
+                        '<p class="px-6 pb-6 text-gray-600 font-body text-base leading-relaxed">' + item.answer + '</p>' +
+                    '</div>';
+                
+                faqContainer.appendChild(faqItem);
+                
+                const button = faqItem.querySelector('button');
+                button.addEventListener('click', function() {
+                    const isActive = faqItem.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(function(otherItem) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('button').setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    if (!isActive) {
+                        faqItem.classList.add('active');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        }
+
+        // Reveal Observer
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
+        const revealObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            revealObserver.observe(el);
+        });
+
+        // Scroll to Collection
+        function scrollToCollection() {
+            const collectionSection = document.getElementById('collection');
+            if (collectionSection) {
+                collectionSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Carousel Logic - Initialize after DOM is ready
+        if (carouselContainer) {
+            items = Array.from(carouselContainer.querySelectorAll('.scroll-item'));
+            
+            function updateCardWidth() {
+                const firstItem = carouselContainer.querySelector('.scroll-item');
+                if (firstItem) {
+                    cardWidth = firstItem.offsetWidth + 24;
+                }
+            }
+            updateCardWidth();
+            window.addEventListener('resize', updateCardWidth);
+
+            function updateCarousel() {
+                const containerRect = carouselContainer.getBoundingClientRect();
+                const containerCenter = containerRect.left + containerRect.width / 2;
+                
+                items.forEach(function(item) {
+                    const itemRect = item.getBoundingClientRect();
+                    const itemCenter = itemRect.left + itemRect.width / 2;
+                    const distance = itemCenter - containerCenter;
+                    
+                    item.classList.remove('is-left', 'is-right', 'is-center');
+                    
+                    const threshold = itemRect.width * 0.55;
+
+                    if (Math.abs(distance) < threshold) {
+                        item.classList.add('is-center');
+                    } else if (distance < 0) {
+                        item.classList.add('is-left');
+                    } else {
+                        item.classList.add('is-right');
+                    }
+                });
+                
+                ticking = false;
+            }
+            
+            carouselContainer.addEventListener('scroll', function() {
+                if (!ticking) {
+                    requestAnimationFrame(updateCarousel);
+                    ticking = true;
+                }
+            });
+            
+            setTimeout(updateCarousel, 200);
+            window.addEventListener('resize', updateCarousel);
+
+            window.nextSlide = function() {
+                const currentScroll = carouselContainer.scrollLeft;
+                const nearestIndex = Math.round(currentScroll / cardWidth);
+                const targetIndex = Math.min(nearestIndex + 1, items.length - 1);
+                items[targetIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            };
+
+            window.prevSlide = function() {
+                const currentScroll = carouselContainer.scrollLeft;
+                const nearestIndex = Math.round(currentScroll / cardWidth);
+                const targetIndex = Math.max(nearestIndex - 1, 0);
+                items[targetIndex].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            };
+        }
+
+        // Stats Counter Animation
+        function animateCount(element, target, duration, isDecimal, suffix) {
+            if (!element) return;
+            
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            function updateCount() {
+                current += increment;
+                if (current < target) {
+                    element.textContent = isDecimal ? current.toFixed(1) : Math.floor(current);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    element.textContent = isDecimal ? target.toFixed(1) : target + (suffix || '');
+                }
+            }
+            
+            updateCount();
+        }
+
+        // Stats Observer
+        const statsSection = document.getElementById('stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        animateCount(document.getElementById('stat-sold'), 80, 1500, false, '+');
+                        animateCount(document.getElementById('stat-rating'), 4.9, 1500, true);
+                        animateCount(document.getElementById('stat-variant'), 5, 1000, false);
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
